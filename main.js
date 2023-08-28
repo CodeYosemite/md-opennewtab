@@ -6,7 +6,8 @@ function getQueryParam(name) {
   
   // Open the provided link in a new tab
   function openLinkInNewTab(link) {
-    window.open(link, '_blank');
+    window.open(
+      link, "_blank");
   }
   
   // Redirect back to the original page after a delay
