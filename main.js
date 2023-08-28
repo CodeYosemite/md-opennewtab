@@ -1,24 +1,24 @@
-// Extract the query parameter from the URL
+// var
 function getQueryParam(name) {
   const urlParams = new URLSearchParams(window.location.search);
   return urlParams.get(name);
 }
 
-// Open the provided link in a new tab
+// Open the ?link in new tab
 function openLinkInNewTab(link) {
   const newTab = window.open(link, '_blank');
   newTab.focus();
 }
 
-// Get the link and current URL from query parameters
+// ?current open link
 const linkParam = getQueryParam('link');
 const currentParam = getQueryParam('current');
 
-// Check if the link parameter is provided
+// check if is inputted/provided
 if (linkParam) {
   openLinkInNewTab(linkParam);
 
-  // Check if the current parameter is provided
+  // check if ?current is too
   if (currentParam) {
     setTimeout(() => {
       window.location.href = currentParam;
