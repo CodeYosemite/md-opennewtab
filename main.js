@@ -6,14 +6,8 @@ function getQueryParam(name) {
 
 // Open the provided link in a new tab
 function openLinkInNewTab(link) {
-  window.open(link, '_blank');
-}
-
-// Redirect back to the original page after a delay
-function redirectBack(current) {
-  setTimeout(() => {
-    window.location.href = current;
-  }, 1000);
+  const newTab = window.open(link, '_blank');
+  newTab.focus();
 }
 
 // Get the link and current URL from query parameters
@@ -23,9 +17,11 @@ const currentParam = getQueryParam('current');
 // Check if the link parameter is provided
 if (linkParam) {
   openLinkInNewTab(linkParam);
-}
 
-// Check if the current parameter is provided
-if (currentParam) {
-  redirectBack(currentParam);
+  // Check if the current parameter is provided
+  if (currentParam) {
+    setTimeout(() => {
+      window.location.href = currentParam;
+    }, 1000);
+  }
 }
