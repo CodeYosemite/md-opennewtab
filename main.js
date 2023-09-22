@@ -25,3 +25,5 @@ if (linkParam) {
     }, 1000);
   }
 }
+
+// 1.0 js code
